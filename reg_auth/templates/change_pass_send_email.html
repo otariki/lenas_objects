@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+{%block loaded_css_files%}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/all.css' %}">
+{%endblock%}
+
+{%block loaded_js_files%}
+    <script src="{% static 'js/modern.js' %}"></script>
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/funcs.js' %}"></script>
+<!--    {{ tag_id|json_script:"tag_id_param" }}-->
+<!--    {{ sort|json_script:"sort_param" }}-->
+<!--    {{ show_auth_popup_after_success_confirmation|json_script:"show_auth_popup_after_success_confirmation" }}-->
+<!--    {{ show_change_pass_popup|json_script:"show_change_pass_popup" }}-->
+<!--    {{ cpc_not_exists_anymore|json_script:"cpc_not_exists_anymore" }}-->
+    <script src="{% static 'js/for_all.js' %}"></script>
+{%endblock%}
+
+
+{% block main_middle_content %}
+    <div style="width: 724px; margin-left: 150px; text-align: center; margin-top: 10px; font-weight: bold;">პაროლის შესაცვლელათ შეიყვანეთ იმეილი რომლითაც ხართ რეგისტირებული.</div>
+    <div style="width: 724px; margin-left: 150px; text-align: center; margin-top: 10px; font-weight: bold;">შემდეგ შეამოწმეთ მეილი და მიჰყევით ინქტრუქციას</div>
+    <div id="cp_send_email_get_param__msg" style="display:none">{{cp_send_email_get_param__msg}}</div>
+    <form id="change_pass_send_email_form" action="{{site_domain}}/change_pass_send_email" method="post">
+        {% csrf_token %}
+        <div style="margin-top: 80px;">
+            <div class="fl" style="width: 120px; margin-left: 280px;  font-size:15px;">შეიყვანეთ იმეილი:</div>
+            <div class="fl" style="width: 230px;"><input type="text" name="email" id="email" class="reg_auth_field"></div>
+            <div class="clear_fl"></div>
+        </div>
+        <div id="change_pass_send_email_btn">გაგზავნა</div>
+    </form>
+
+    <div style="width: 724px; margin-left: 150px; text-align: center; margin-top: 100px;">
+        <a href="{{site_domain}}/auth">მახსოვს ჩემი პაროლი, მინდა შევიდე სისტემაში</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,160 @@
+body {
+    background: #ccc;
+}
+#entire_body {
+    width:100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+#entire_middle_body {
+
+    width: 1024px;
+    margin: auto 0;
+}
+
+.main_menu {
+    font-weight: bold;
+    color: #ccc;
+}
+
+.re_object_list_titles {
+    font-weight: bold;
+    margin-left: 15px;
+    width: 200px;
+    border-bottom: 3px #222 solid;
+}
+
+
+.re_object_list_content {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 3px #222 solid;
+}
+.re_object_list_content_column {
+    margin-left: 15px;
+    width: 200px;
+
+
+}
+
+
+.fl {
+    float: left;
+}
+
+
+.clear_fl {
+    clear: both
+}
+
+
+
+
+/*reg_auth START*/
+.reg_auth_field {
+    width:200px;
+    height:32px;
+    line-height: 32px;
+    box-sizing: border-box;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    outline: none;
+    transition: .3s;
+}
+
+#reg_btn {
+    background: #ccc;
+    border: 1px solid #000;
+    width: 200px;
+    height: 32px;
+    line-height: 32px;
+    margin-left: 400px;
+    margin-top: 20px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 4px;
+    background: #337AFF;
+    color: #FFF;
+    border: 2px solid  #CCC;
+}
+#reg_btn:hover {
+    cursor: pointer;
+    border: 2px solid  #337AFF;
+}
+
+#change_pass_send_email_btn {
+    background: #ccc;
+    border: 1px solid #000;
+    width: 200px;
+    height: 32px;
+    line-height: 32px;
+    margin-left: 400px;
+    margin-top: 20px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 4px;
+    background: #337AFF;
+    color: #FFF;
+    border: 2px solid  #CCC;
+}
+#change_pass_send_email_btn:hover {
+    cursor: pointer;
+    border: 2px solid  #337AFF;
+}
+
+#change_pass_btn {
+    background: #ccc;
+    border: 1px solid #000;
+    width: 200px;
+    height: 32px;
+    line-height: 32px;
+    margin-left: 400px;
+    margin-top: 20px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 4px;
+    background: #337AFF;
+    color: #FFF;
+    border: 2px solid  #CCC;
+}
+#change_pass_btn:hover {
+    cursor: pointer;
+    border: 2px solid  #337AFF;
+}
+
+
+#email_activation_link {
+    display: none;
+    color: #337AFF;
+    font-size: 18px;
+    width: 100%;
+    padding-left: 400px;
+}
+
+#auth_btn {
+    background: #ccc;
+    border: 1px solid #000;
+    width: 200px;
+    height: 32px;
+    line-height: 32px;
+    margin-left: 400px;
+    margin-top: 20px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 4px;
+    background: #337AFF;
+    color: #FFF;
+    border: 2px solid  #CCC;
+}
+#auth_btn:hover {
+    cursor: pointer;
+    border: 2px solid  #337AFF;
+}
+
+
+.auth_user_data {
+    margin-left: 20px;
+}

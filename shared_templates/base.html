@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {%block page_title%}
+        {%endblock%}
+    </title>
+    {%block loaded_css_files%}
+    {%endblock%}
+
+    {{ domain|json_script:"_domain" }}
+    {{ request.session.session_key|json_script:"_sesskey" }}
+    {{ browser|json_script:"_browser" }}
+
+    {%block loaded_js_files%}
+    {%endblock%}
+</head>
+<body>
+    <div id="entire_body">
+
+        <div id="entire_middle_body">
+             <div>
+                <div class="fl">main menu</div>
+                <div class="fl auth_user_data">
+                    {%block auth_user_data%}
+                    {%endblock%}
+                </div>
+                <div class="clear_fl"></div>
+            </div>
+            {%block main_middle_content%}
+            {%endblock%}
+        </div>
+    </div>
+</body>
+</html>

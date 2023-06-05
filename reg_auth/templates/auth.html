@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% load static %}
+{%block loaded_css_files%}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/all.css' %}">
+{%endblock%}
+
+{%block loaded_js_files%}
+    <script src="{% static 'js/modern.js' %}"></script>
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/funcs.js' %}"></script>
+<!--    {{ tag_id|json_script:"tag_id_param" }}-->
+<!--    {{ sort|json_script:"sort_param" }}-->
+<!--    {{ show_auth_popup_after_success_confirmation|json_script:"show_auth_popup_after_success_confirmation" }}-->
+<!--    {{ show_change_pass_popup|json_script:"show_change_pass_popup" }}-->
+<!--    {{ cpc_not_exists_anymore|json_script:"cpc_not_exists_anymore" }}-->
+    <script src="{% static 'js/for_all.js' %}"></script>
+
+{%endblock%}
+
+
+{% block main_middle_content %}
+    <div id="csrf" style="display:none;">{{ csrf_token }}</div>
+    <div id="aj_send_email_activation_code" style="display:none;">{% url 'aj_send_email_activation_code' %}</div>
+
+    <div id="auth_get_param__msg" style="display:none">{{get_param__msg}}</div>
+    <div id="auth_get_param__err" style="display:none">{{get_param__err}}</div>
+
+    <div style="width: 724px; margin-left: 130px; text-align: center; margin-top: 10px; font-weight: bold;">ავტორიზაცია</div>
+    <div id="email_activation_link" data-email="{{url_email_for_activation}}" >იმეილის აქტივაცია</div>
+    <form id="auth_form" action="{{site_domain}}/auth_process" method="post">
+        {% csrf_token %}
+        <div style="margin-top: 80px;">
+            <div class="fl" style="width: 120px; margin-left: 280px; font-size:15px;">იმეილი:</div>
+            <div class="fl" style="width: 230px;"><input type="text" name="email" id="email" class="reg_auth_field"></div>
+            <div class="clear_fl"></div>
+        </div>
+        <div style="margin-top: 30px;">
+            <div class="fl" style="width: 120px; margin-left: 280px; font-size:15px;">პაროლი:</div>
+            <div class="fl" style="width: 230px;"><input type="password" name="pass" id="pass" class="pass_fields reg_auth_field"></div>
+            <div class="fl" style=" width: 200px;">
+                <input type="checkbox" id="show_pass"> მაჩვენე პაროლი
+            </div>
+            <div class="clear_fl"></div>
+        </div>
+        <div id="auth_btn">შესვლა</div>
+    </form>
+
+    <div style="width: 724px; margin-left: 150px; text-align: center; margin-top: 100px;">
+        <a href="{{site_domain}}/reg">თუ არ ხართ რეგისტრირებული, დარეგისტრირდით</a>
+    </div>
+    <div style="width: 724px; margin-left: 150px; text-align: center; margin-top: 20px;">
+        <a href="{{site_domain}}/change_pass">დაგავიწყდათ პაროლი? შეცვალეთ</a>
+    </div>
+
+{% endblock %}

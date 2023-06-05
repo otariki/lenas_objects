@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+
+{%block loaded_css_files%}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/all.css' %}">
+{%endblock%}
+
+{% block auth_user_data %}
+    შემოსული ხართ როგორც: {{auth_user_name}} ;;; user status: {{auth_user_status_id}}
+    <div><a href="{{site_domain}}/logout">  გასვლა </a></div>
+
+{% endblock %}
+
+
+{% block main_middle_content %}
+    list of objects
+
+
+    <div>
+        <div class="fl re_object_list_titles">id</div>
+        <div class="fl re_object_list_titles">რეგიონი</div>
+        <div class="fl re_object_list_titles">ოთახების რაოდენობა</div>
+        <div class="fl re_object_list_titles">მისამართი</div>
+        <div class="clear_fl"></div>
+    </div>
+    {% for re_obj in re_objects%}
+        <div class="re_object_list_content">
+            <div class="fl re_object_list_content_column">{{re_obj.id}}</div>
+            <div class="fl re_object_list_content_column">{{re_obj.region}}</div>
+            <div class="fl re_object_list_content_column">{{re_obj.rooms_cnt}}</div>
+            <div class="fl re_object_list_content_column">{{re_obj.addres}}</div>
+            <div class="clear_fl"></div>
+            <div class="fl re_object_list_content_column">second line data1</div>
+            <div class="fl re_object_list_content_column">second line data2</div>
+            <div class="clear_fl"></div>
+        </div>
+    {% endfor %}
+{% endblock %}
